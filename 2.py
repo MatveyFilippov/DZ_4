@@ -55,12 +55,16 @@ for i in range(SIZEA):
         if ARRAYA[i] <= ARRAYB[j]:
             if ARRAYA[i] == ARRAYB[j]:
                 K = K + 1
-                Y = ARRAYA[i]
-                X = X, Y
+                X = X, ARRAYA[i]
         else:
             if ARRAYB[j] == ARRAYA[i]:
                 K = K + 1
-                Y = ARRAYA[i]
-                X = X, Y, sep= " "
-print("Найдено", K, "общих эементов")
-print(X)
+                X = X, ARRAYB[j]
+print()
+if K != 0:
+    print("Найдено общих эементов:", K)
+    print("Общие элементы:", X)
+else:
+    print("Общих элементов не найдено")
+print()
+input("Чтобы завершить нажмите ENTER")
