@@ -1,27 +1,29 @@
 input("Чтобы начать нажмите ENTER")
 print()
-M = int(input("Введите размер масива: "))
-B = [0] * M
+SIZE= int(input("Введите размер масива: "))
+ARRAY = [0] * SIZE
 print()
-print("Выберите  Y  если хотите ввести элементы с клавиатуры" )
+print("Выберите  K  если хотите ввести элементы с клавиатуры" )
 print("Выберите  R  если хотите, чтоб элементы были сгенерированы рандомно в диапозоне от -999999 до 999999" )
-V = input("Введите Y или R: ")
-while V != "Y" and V != "R":
-    V = input("Ошибка! Введите заглавные Y или R: ")
+CHOICE = input("Введите K или R: ")
+while CHOICE != "K" and CHOICE != "R":
+    CHOICE = input("Ошибка! Введите заглавные Y или R: ")
 else:
     print("Хорошо!")
-    if V == "Y":
-        for i in range(M):
+    print()
+    if CHOICE == "K":
+        for i in range(SIZE):
             print("Введите элемент №", i + 1,":", sep="", end=" ")
-            B[i] = float(input())
+            ARRAY[i] = float(input())
     else:
         from random import randint
-        for i in range(M):
-            B[i] = float(randint(-999999, 999999))
+        for i in range(SIZE):
+            ARRAY[i] = randint(-999999, 999999)
 print()
 input("Нажмите ENTER чтобы проверить верность полученных данных")
 print()
-print("Размера массива:", M)
-print("Ваш массив:", B)
+print("Размера массива:", SIZE)
+print("Ваш массив:", ARRAY)
 print()
 input("Если всё верно нажмите ENTER")
+print()
