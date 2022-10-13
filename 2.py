@@ -31,13 +31,13 @@ else:
     if CHOICEB == "K":
         print("Хорошо!")
         print()
-        for i in range(SIZEB):
-            print("Введите элемент №", i + 1,":", sep="", end=" ")
-            ARRAYB[i] = float(input())
+        for j in range(SIZEB):
+            print("Введите элемент №", j + 1,":", sep="", end=" ")
+            ARRAYB[j] = float(input())
     else:
         from random import randint
-        for i in range(SIZEB):
-            ARRAYB[i] = randint(-999999, 999999)
+        for j in range(SIZEB):
+            ARRAYB[j] = randint(-999999, 999999)
 print()
 print("Принято! Сверьтесь всё ли верно?")
 print()
@@ -48,9 +48,10 @@ print("Размера массива B:", SIZEB)
 print("Mассив B:", ARRAYB)
 print()
 input("Нажмите ENTER")
-if ARRAYA[i] == ARRAYB[i]:
-    X = i
-    ARRAYN = [0] * X
-    print(ARRAYN)
-else:
-    print("Нет общих элементов")
+X = -1
+for i in range(SIZEA):
+    for j in range(SIZEB):
+        if ARRAYA[i] == ARRAYB[j]:
+            X = ARRAYA[i]
+            ARRAYN = [X]
+            print(ARRAYN)
