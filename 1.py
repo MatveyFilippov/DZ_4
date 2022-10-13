@@ -16,9 +16,9 @@ else:
             print("Введите элемент №", i + 1,":", sep="", end=" ")
             ARRAY[i] = float(input())
     else:
-        from random import randint
+        from random import uniform
         for i in range(SIZE):
-            ARRAY[i] = randint(-999999, 999999)
+            ARRAY[i] = uniform(-999999, 999999)
 print("Принято! Сверьтесь всё ли верно?")
 print()
 print("Размера массива:", SIZE)

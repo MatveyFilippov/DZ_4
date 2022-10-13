@@ -15,12 +15,12 @@ else:
         print("Хорошо!")
         print()
         for i in range(SIZEA):
-            print("Введите элемент №", i + 1,":", sep="", end=" ")
+            print("Введите элемент №", i + 1," для массива A:", sep="", end=" ")
             ARRAYA[i] = float(input())
     else:
-        from random import randint
+        from random import uniform
         for i in range(SIZEA):
-            ARRAYA[i] = randint(-999999, 999999)
+            ARRAYA[i] = uniform(-999999, 999999)
 print()
 print("Выберите  K  если хотите ввести элементы для массива B с клавиатуры" )
 print("Выберите  R  если хотите, чтоб элементы для массива B были сгенерированы рандомно в диапозоне от -999999 до 999999" )
@@ -32,12 +32,12 @@ else:
         print("Хорошо!")
         print()
         for j in range(SIZEB):
-            print("Введите элемент №", j + 1,":", sep="", end=" ")
+            print("Введите элемент №", j + 1," для массива B:", sep="", end=" ")
             ARRAYB[j] = float(input())
     else:
-        from random import randint
+        from random import uniform
         for j in range(SIZEB):
-            ARRAYB[j] = randint(-999999, 999999)
+            ARRAYB[j] = uniform(-999999, 999999)
 print()
 print("Принято! Сверьтесь всё ли верно?")
 print()
@@ -48,10 +48,19 @@ print("Размера массива B:", SIZEB)
 print("Mассив B:", ARRAYB)
 print()
 input("Нажмите ENTER")
-X = -1
+K = 0
+X = ""
 for i in range(SIZEA):
     for j in range(SIZEB):
-        if ARRAYA[i] == ARRAYB[j]:
-            X = ARRAYA[i]
-            ARRAYN = [X]
-            print(ARRAYN)
+        if ARRAYA[i] <= ARRAYB[j]:
+            if ARRAYA[i] == ARRAYB[j]:
+                K = K + 1
+                Y = ARRAYA[i]
+                X = X, Y
+        else:
+            if ARRAYB[j] == ARRAYA[i]:
+                K = K + 1
+                Y = ARRAYA[i]
+                X = X, Y, sep= " "
+print("Найдено", K, "общих эементов")
+print(X)
