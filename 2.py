@@ -1,8 +1,8 @@
 input("Чтобы начать нажмите ENTER")
 print()
-SIZEA = int(input("Введите размер масива A: "))
+SIZEA = int(input("Введите размер масcива A: "))
 ARRAYA = [0] * SIZEA
-SIZEB = int(input("Введите размер масива B: "))
+SIZEB = int(input("Введите размер масcива B: "))
 ARRAYB = [0] * SIZEB
 print()
 print("Выберите  K  если хотите ввести элементы для массива A с клавиатуры" )
