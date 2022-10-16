@@ -55,15 +55,15 @@ for i in range(SIZEA):
         if ARRAYA[i] <= ARRAYB[j]:
             if ARRAYA[i] == ARRAYB[j]:
                 K = K + 1
-                X = X, ARRAYA[i]
+                X = X + str(ARRAYA[i]) + " ; "
         else:
             if ARRAYB[j] == ARRAYA[i]:
                 K = K + 1
-                X = X, ARRAYB[j]
+                X = X + str(ARRAYB[j]) + " ; "
 print()
 if K != 0:
     print("Найдено общих эементов:", K)
-    print("Общие элементы:", X)
+    print("Общие элементы: ", X, sep="")
 else:
     print("Общих элементов не найдено")
 print()
